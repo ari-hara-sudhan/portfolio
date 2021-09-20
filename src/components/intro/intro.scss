@@ -1,0 +1,117 @@
+@import "../../gobal.scss";
+.intro {
+  background-color: white;
+  display: flex;
+
+  @include mobile {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .left {
+    flex: 0.5;
+
+    .imgcontainer {
+      width: 700px;
+      height: 700px;
+      background-color: crimson;
+      border-radius: 50%;
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+      float: right;
+
+      @include mobile {
+        align-items: flex-start;
+        height: fit-content;
+        max-height: 300px;
+        border-radius: 80%;
+        overflow: hidden;
+      }
+
+      img {
+        height: 90%;
+
+        @include mobile {
+          height: 50%;
+        }
+      }
+    }
+  }
+  .right {
+    flex: 0.5;
+
+    .wrapper {
+      width: 100%;
+      height: 60%;
+      padding-left: 50px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      position: relative;
+
+      @include mobile {
+        padding-left: 0;
+        align-items: center;
+      }
+
+      h1 {
+        font-size: 50px;
+        margin-bottom: 10px;
+        margin-top: 10px;
+
+        @include mobile {
+          font-size: 30px;
+        }
+      }
+      h2 {
+        font-size: 30px;
+
+        @include mobile {
+          font-size: 20px;
+        }
+      }
+      h3 {
+        font-size: 30px;
+
+        span {
+          font-size: inherit;
+          color: crimson;
+        }
+
+        .ityped-cursor {
+          animation: blink 1s infinite;
+        }
+
+        @keyframes blink {
+          50% {
+            opacity: 1;
+          }
+          100% {
+            opacity: 0;
+          }
+        }
+      }
+    }
+    a {
+      position: absolute;
+      bottom: 10px;
+      left: 60%;
+
+      @include mobile {
+        left: 40%;
+      }
+
+      img {
+        width: 100px;
+        box-shadow: 0px 2px 5px -3px black;
+        animation: blink 2s infinite;
+      }
+      @keyframes blink {
+        100% {
+          opacity: 0;
+        }
+      }
+    }
+  }
+}
